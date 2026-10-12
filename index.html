@@ -19,9 +19,16 @@
       font-family: serif, Lato, sans-serif;
       font-size: 120%;
       background: var(--bg);
+      background-image: url("assets/stare-bg.png");
+      background-position: right bottom;
+      background-repeat: no-repeat;
+      background-size: 55%;
       color: var(--text);
       margin: 0;
       min-height: 100vh;
+    }
+    @media screen and (min-width: 800px) {
+      body { background-attachment: fixed; }
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -52,6 +59,7 @@
     }
     .featured .cover img {
       width: 100%;
+      height: auto;
       display: block;
       border: 1px solid var(--border);
     }
@@ -70,6 +78,7 @@
     .featured h2 a { color: var(--text); }
     .featured p { color: var(--text-dim); line-height: 1.6; margin-top: 0; }
     .badge-play img { height: 72px; display: inline-block; }
+    .badge-itch img { height: 50px; display: inline-block; margin-top: 0.35rem; }
     .btn-itch {
       display: inline-block;
       border: 1px solid var(--accent);
@@ -103,7 +112,7 @@
     .cell .title {
       display: block;
       margin-top: 0.5rem;
-      font-size: 0.95rem;
+      font-size: 1.25rem;
       color: var(--accent);
     }
     .all-games { text-align: center; margin-bottom: 1rem; }
@@ -134,7 +143,7 @@
         <p>A narrative RPG.</p>
         <a class="badge-play" href="https://play.google.com/store/apps/details?id=com.doma581.amimicryoflife"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
         <br>
-        <a class="btn-itch" href="https://aak581.itch.io/a-mimicry-of-life">Play on itch.io</a>
+        <a class="badge-itch" href="https://aak581.itch.io/a-mimicry-of-life"><img src="assets/itch-badge.svg" alt="Available on itch.io"></a>
       </div>
     </section>
 
