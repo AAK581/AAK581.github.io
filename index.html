@@ -4,38 +4,128 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AAK581 — Game Developer</title>
+  <meta name="description" content="AAK581 (Doma) — independent game developer. A Mimicry of Life, out now on Android, plus narrative and horror games on itch.io.">
   <style>
+    :root {
+      --bg: #1a1a2e;
+      --bg-card: #23233c;
+      --text: #e8e8e8;
+      --muted: #b8b8c8;
+      --accent: #ffd86b;
+    }
+    * { box-sizing: border-box; }
     body {
       font-family: Georgia, serif;
-      background: #1a1a2e;
-      color: #e8e8e8;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
       margin: 0;
+      min-height: 100vh;
     }
-    main { text-align: center; padding: 2rem; max-width: 540px; }
-    h1 { font-size: 2rem; margin-bottom: 0.25rem; }
-    p { color: #b8b8c8; line-height: 1.6; }
-    a {
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+    }
+    h1 { font-size: 2.2rem; margin: 0 0 0.25rem; }
+    .tagline { color: var(--muted); margin-top: 0; }
+    p { color: var(--muted); line-height: 1.6; }
+
+    .featured {
+      background: var(--bg-card);
+      border: 1px solid #34345a;
+      border-radius: 10px;
+      padding: 1.75rem 1.5rem;
+      margin: 2.5rem 0;
+    }
+    .featured h2 {
+      font-size: 1.5rem;
+      margin: 0 0 0.5rem;
+      color: var(--text);
+    }
+    .featured .label {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .btn {
       display: inline-block;
-      margin-top: 1rem;
-      color: #ffd86b;
+      margin: 0.75rem 0.4rem 0;
+      color: var(--accent);
       text-decoration: none;
-      border: 1px solid #ffd86b;
+      border: 1px solid var(--accent);
       padding: 0.6rem 1.4rem;
       border-radius: 6px;
     }
-    a:hover { background: #ffd86b; color: #1a1a2e; }
+    .btn:hover { background: var(--accent); color: var(--bg); }
+    .btn.solid { background: var(--accent); color: var(--bg); }
+    .btn.solid:hover { background: #ffe79a; border-color: #ffe79a; }
+
+    .games h2 {
+      font-size: 1.2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .games ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+    }
+    .games li { margin: 0; }
+    .games a {
+      display: block;
+      padding: 0.7rem 1rem;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid #2e2e4e;
+    }
+    .games li:first-child a { border-top: 1px solid #2e2e4e; }
+    .games a:hover { background: var(--bg-card); color: var(--accent); }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #777790;
+      font-size: 0.85rem;
+    }
+    footer a { color: #9898b8; }
   </style>
 </head>
 <body>
   <main>
     <h1>AAK581</h1>
-    <p>Independent game developer.</p>
-    <p><strong>A Mimicry of Life</strong> — a narrative RPG, out now on Android.</p>
-    <a href="https://play.google.com/store/apps/details?id=com.doma581.amimicryoflife">Get it on Google Play</a>
+    <p class="tagline">Independent game developer — narrative, horror, and mystery games.</p>
+
+    <section class="featured">
+      <span class="label">Out now on Android</span>
+      <h2>A Mimicry of Life</h2>
+      <p>A narrative RPG.</p>
+      <a class="btn solid" href="https://play.google.com/store/apps/details?id=com.doma581.amimicryoflife">Get it on Google Play</a>
+      <a class="btn" href="https://aak581.itch.io/a-mimicry-of-life">Play on itch.io</a>
+    </section>
+
+    <section class="games">
+      <h2>More Games</h2>
+      <ul>
+        <li><a href="https://aak581.itch.io/who-killed-marie-blackwood">Who Killed Marie Blackwood</a></li>
+        <li><a href="https://aak581.itch.io/the-puppeteer-lamentation">The Puppeteer: Lamentation</a></li>
+        <li><a href="https://aak581.itch.io/engineering-marvels-from-hell">Engineering Marvels From Hell</a></li>
+        <li><a href="https://aak581.itch.io/the-reids">The Reids</a></li>
+        <li><a href="https://aak581.itch.io/from-voorhees-with-love">From Voorhees, with Love</a></li>
+        <li><a href="https://aak581.itch.io/retrieval">Retrieval</a></li>
+        <li><a href="https://aak581.itch.io/the-purge-desperation">The Purge: Desperation</a></li>
+        <li><a href="https://aak581.itch.io/monsters">Monsters (Jam version, Pre-alpha)</a></li>
+      </ul>
+      <a class="btn" href="https://aak581.itch.io/">All games on itch.io</a>
+    </section>
   </main>
+
+  <footer>
+    <a href="/privacy/a-mimicry-of-life/">Privacy Policy — A Mimicry of Life</a>
+  </footer>
 </body>
 </html>
