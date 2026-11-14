@@ -3,206 +3,380 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doma — Game Developer</title>
-  <meta name="description" content="Doma — just a humble Egyptian computer engineer with a passion for the horrific... And coffee. A Mimicry of Life, out now on Android, plus more games on itch.io.">
+  <title>Adham Ahmed Kamel · Web3 Engineer</title>
+  <meta name="description" content="Adham Ahmed Kamel, Web3 engineer at Mercatura Forum. Multichain wallet features, cross-chain bridges and developer tooling on the Internet Computer, plus games on Google Play and itch.io.">
+  <link rel="canonical" href="https://aak581.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aak581.github.io/">
+  <meta property="og:title" content="Adham Ahmed Kamel · Web3 Engineer">
+  <meta property="og:description" content="Multichain wallet features, cross-chain bridges and developer tooling on the Internet Computer. Games on the side.">
+  <meta property="og:image" content="https://aak581.github.io/assets/work/menese.jpg">
   <link rel="icon" href="/favicon.ico" sizes="48x48 32x32 16x16">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#0b0d12">
   <style>
     :root {
-      --bg: #000000;
-      --panel: #0c0c0c;
-      --border: #262626;
-      --text: #cbcac8;
-      --text-dim: rgba(203, 202, 200, 0.75);
-      --accent: #b11d1d;
+      --bg: #0b0d12;
+      --bg-2: #11141b;
+      --card: #141821;
+      --border: #232938;
+      --text: #e7e9ee;
+      --muted: #9aa3b5;
+      --accent: #8b9cff;
+      --accent-2: #5eead4;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      --radius: 14px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f8fb;
+        --bg-2: #eef0f6;
+        --card: #ffffff;
+        --border: #e1e5ee;
+        --text: #141821;
+        --muted: #5b6475;
+        --accent: #4f5fe0;
+        --accent-2: #0f9f8c;
+        --shadow: 0 10px 30px rgba(20, 24, 33, 0.08);
+      }
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: serif, Lato, sans-serif;
-      font-size: 120%;
-      background: var(--bg);
-      background-image: url("assets/stare-bg.png");
-      background-position: right bottom;
-      background-repeat: no-repeat;
-      background-size: 55%;
-      color: var(--text);
       margin: 0;
-      min-height: 100vh;
-    }
-    @media screen and (min-width: 800px) {
-      body { background-attachment: fixed; }
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
     a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+    .skip { position: absolute; left: -999px; top: 0; }
+    .skip:focus { left: 1rem; top: 1rem; background: var(--card); padding: 0.5rem 0.8rem; z-index: 10; }
 
-    .wrap {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2.5rem 1.25rem 1rem;
-    }
-    header { text-align: center; margin-bottom: 2.5rem; }
-    h1 { font-size: 2.4rem; margin: 0; color: var(--text); }
-    .tagline { color: var(--text-dim); margin: 0.4rem 0 0; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 1.25rem; }
 
-    .featured {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      padding: 1.5rem;
-      margin-bottom: 3rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      align-items: center;
-      justify-content: center;
-    }
-    .featured .cover {
-      flex: 1 1 320px;
-      max-width: 460px;
-    }
-    .featured .cover img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border: 1px solid var(--border);
-    }
-    .featured .info {
-      flex: 1 1 280px;
-      max-width: 420px;
-      text-align: center;
-    }
-    .featured .label {
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-    .featured h2 { margin: 0.4rem 0 0.6rem; font-size: 1.7rem; }
-    .featured h2 a { color: var(--text); }
-    .featured p { color: var(--text-dim); line-height: 1.6; margin-top: 0; }
-    .badge-play img { height: 72px; display: inline-block; }
-    .badge-itch img { height: 50px; display: inline-block; margin-top: 0.35rem; }
-    .btn-itch {
-      display: inline-block;
-      border: 1px solid var(--accent);
-      padding: 0.5rem 1.2rem;
-      margin-top: 0.5rem;
-    }
-    .btn-itch:hover { background: var(--accent); color: #fff; text-decoration: none; }
-
-    .games h3 {
-      font-size: 1.1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-dim);
+    /* nav */
+    nav {
+      position: sticky; top: 0; z-index: 5;
+      background: color-mix(in srgb, var(--bg) 82%, transparent);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
-      padding-bottom: 0.5rem;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
-    .cell a.thumb { display: block; border: 1px solid var(--border); }
-    .cell img {
-      width: 100%;
-      aspect-ratio: 315 / 250;
-      object-fit: cover;
-      display: block;
-      background: var(--panel);
-    }
-    .cell .title {
-      display: block;
-      margin-top: 0.5rem;
-      font-size: 1.25rem;
-      color: var(--accent);
-    }
-    .all-games { text-align: center; margin-bottom: 1rem; }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 58px; }
+    nav .brand { color: var(--text); font-weight: 650; letter-spacing: 0.01em; white-space: nowrap; }
+    nav ul { list-style: none; display: flex; gap: 1.25rem; margin: 0; padding: 0; }
+    nav ul a { color: var(--muted); font-size: 0.95rem; }
+    nav ul a:hover { color: var(--text); text-decoration: none; }
+    @media (max-width: 560px) { nav ul { gap: 0.85rem; } nav ul li.opt { display: none; } nav .brand { font-size: 0.95rem; } nav ul a { font-size: 0.9rem; } }
 
-    footer {
-      text-align: center;
-      border-top: 1px solid var(--border);
-      padding: 1.25rem;
-      font-size: 0.8rem;
-      color: var(--text-dim);
+    /* hero */
+    .hero { padding: 4.5rem 1.25rem 3rem; position: relative; }
+    /* Soft glow behind the hero: full-bleed and fading to transparent well inside its own box,
+       so no edge of the layer is ever visible. */
+    body::before {
+      content: ""; position: absolute; left: 0; right: 0; top: 0; height: 640px; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(closest-side at 22% 28%, color-mix(in srgb, var(--accent) 20%, transparent), transparent),
+        radial-gradient(closest-side at 78% 12%, color-mix(in srgb, var(--accent-2) 14%, transparent), transparent);
+    }
+    body { position: relative; }
+    .hero-top { display: flex; align-items: center; gap: 1.1rem; }
+    .avatar { width: 76px; height: 76px; border-radius: 50%; border: 2px solid var(--border); flex: none; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin: 0; letter-spacing: -0.02em; }
+    .role { color: var(--muted); margin: 0.35rem 0 0; }
+    .lead { font-size: 1.15rem; max-width: 46rem; margin: 1.6rem 0 1.8rem; }
+    .cta { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.45rem;
+      padding: 0.6rem 1rem; border-radius: 10px; border: 1px solid var(--border);
+      background: var(--card); color: var(--text); font-weight: 550;
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    }
+    .btn:hover { text-decoration: none; transform: translateY(-2px); border-color: var(--accent); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #0b0d12; }
+    @media (prefers-color-scheme: light) { .btn.primary { color: #fff; } }
+    .btn svg { width: 18px; height: 18px; }
+
+    /* sections */
+    /* section.wrap: .wrap's side padding would otherwise cancel the vertical rhythm */
+    section.wrap { padding-top: 3.25rem; padding-bottom: 0.25rem; }
+    h2 { font-size: 1.5rem; margin: 0 0 1.4rem; letter-spacing: -0.01em; }
+    h2 .num { font-family: var(--mono); color: var(--accent-2); font-size: 0.95rem; margin-right: 0.5rem; }
+
+    /* work */
+    .job { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem 1.6rem; box-shadow: var(--shadow); }
+    .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.3rem 1rem; align-items: baseline; }
+    .job-head h3 { margin: 0; font-size: 1.15rem; }
+    .job-head .meta { color: var(--muted); font-size: 0.95rem; }
+    .job ul { margin: 1rem 0 0; padding-left: 1.15rem; }
+    .job li { margin: 0.5rem 0; }
+    .job li::marker { color: var(--accent); }
+    .also { color: var(--muted); font-size: 0.95rem; margin: 1rem 0 0; }
+
+    /* projects */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.1rem; }
+    .card {
+      display: flex; flex-direction: column;
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--accent) 55%, var(--border)); }
+    .card .media { aspect-ratio: 16 / 10; background: var(--bg-2); border-bottom: 1px solid var(--border); overflow: hidden; }
+    .card .media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .card:hover .media img { transform: scale(1.03); }
+    .card .media.type {
+      display: grid; place-items: center; text-align: center; padding: 1rem;
+      background:
+        radial-gradient(circle at 25% 20%, color-mix(in srgb, var(--accent) 28%, transparent), transparent 55%),
+        radial-gradient(circle at 80% 85%, color-mix(in srgb, var(--accent-2) 22%, transparent), transparent 55%),
+        var(--bg-2);
+    }
+    .card .media.type span { font-family: var(--mono); font-size: 1.35rem; font-weight: 600; letter-spacing: 0.02em; }
+    .card .media.type small { display: block; font-family: var(--mono); color: var(--muted); font-size: 0.8rem; margin-top: 0.35rem; }
+    .card .body { padding: 1.1rem 1.2rem 1.2rem; display: flex; flex-direction: column; gap: 0.6rem; flex: 1; }
+    .card h3 { margin: 0; font-size: 1.1rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.97rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; padding-top: 0.3rem; }
+    .tags li { list-style: none; font-family: var(--mono); font-size: 0.75rem; padding: 0.15rem 0.5rem; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); }
+    .tags { padding-left: 0; margin-bottom: 0; }
+    .links { display: flex; gap: 1rem; font-weight: 550; font-size: 0.95rem; }
+
+    /* games */
+    .game { display: grid; grid-template-columns: minmax(0, 360px) 1fr; gap: 1.5rem; align-items: center;
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; box-shadow: var(--shadow); }
+    .game img { width: 100%; border-radius: 10px; display: block; border: 1px solid var(--border); aspect-ratio: 315 / 250; object-fit: cover; }
+    .game .label { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-2); }
+    .game h3 { margin: 0.3rem 0 0.4rem; font-size: 1.35rem; }
+    .game p { color: var(--muted); margin: 0 0 1rem; }
+    .game .play img { height: 56px; width: auto; border: 0; aspect-ratio: auto; }
+    .game .row { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; }
+    @media (max-width: 680px) { .game { grid-template-columns: 1fr; } }
+
+    /* lists */
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+    @media (max-width: 760px) { .two { grid-template-columns: 1fr; } }
+    .panel { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.3rem 1.4rem; box-shadow: var(--shadow); }
+    .panel h3 { margin: 0 0 0.8rem; font-size: 1.05rem; }
+    .panel ul { margin: 0; padding-left: 1.1rem; }
+    .panel li { margin: 0.45rem 0; }
+    .panel li::marker { color: var(--accent); }
+    .skills dt { font-weight: 600; margin-top: 0.7rem; }
+    .skills dt:first-child { margin-top: 0; }
+    .skills dd { margin: 0.15rem 0 0; color: var(--muted); }
+
+    /* contact */
+    section.contact { text-align: center; padding-top: 4rem; padding-bottom: 4rem; }
+    .contact p { color: var(--muted); max-width: 34rem; margin: 0 auto 1.4rem; }
+    .contact .cta { justify-content: center; }
+
+    footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+    footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; padding: 1.2rem 1.25rem; }
+    footer a { color: var(--muted); }
+
+    /* reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .btn, .card, .card .media img { transition: none; }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Doma</h1>
-      <p class="tagline">Just a humble Egyptian computer engineer with a passion for the horrific... And coffee.</p>
-      <p class="tagline"><a href="https://linktr.ee/aak581">linktr.ee/aak581</a></p>
+  <a class="skip" href="#main">Skip to content</a>
+  <nav aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="#top">Adham Ahmed Kamel</a>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li class="opt"><a href="#games">Games</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="hero wrap" id="top">
+      <div class="hero-top">
+        <img class="avatar" src="/assets/icons/icon-192.png" alt="" width="76" height="76">
+        <div>
+          <h1>Adham Ahmed Kamel</h1>
+          <p class="role">Web3 Engineer at Mercatura Forum · Giza, Egypt</p>
+        </div>
+      </div>
+      <p class="lead">I build multichain wallet features, cross-chain bridges and developer tooling on the Internet Computer. Outside work I ship games, from an on-chain Unity shooter to a narrative RPG on Google Play.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:adhamahmad@outlook.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email me</a>
+        <a class="btn" href="https://www.linkedin.com/in/adham-ahmed-3849b324b">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.6 8.65 22 11.3 22 14.7V21h-4v-5.6c0-1.34-.03-3.06-1.86-3.06-1.87 0-2.15 1.46-2.15 2.96V21h-4V9Z"/></svg>LinkedIn</a>
+        <a class="btn" href="https://github.com/AAK581">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>GitHub</a>
+      </div>
     </header>
 
-    <section class="featured">
-      <div class="cover">
-        <a href="https://play.google.com/store/apps/details?id=com.doma581.amimicryoflife"><img src="assets/covers/a-mimicry-of-life.gif" alt="A Mimicry of Life cover" width="816" height="624"></a>
-      </div>
-      <div class="info">
-        <span class="label">Out now on Android</span>
-        <h2><a href="https://aak581.itch.io/a-mimicry-of-life">A Mimicry of Life</a></h2>
-        <p>A narrative RPG.</p>
-        <a class="badge-play" href="https://play.google.com/store/apps/details?id=com.doma581.amimicryoflife"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
-        <br>
-        <a class="badge-itch" href="https://aak581.itch.io/a-mimicry-of-life"><img src="assets/itch-badge.svg" alt="Available on itch.io"></a>
+    <section id="work" class="wrap reveal">
+      <h2><span class="num">01</span>Work</h2>
+      <article class="job">
+        <div class="job-head">
+          <h3>Web3 Engineer, Mercatura Forum</h3>
+          <span class="meta">Jul 2025 to present · Cairo, hybrid</span>
+        </div>
+        <ul>
+          <li>Build features across 10 chains for <a href="https://www.meneseprotocol.io/">Menese Protocol</a>, a non-custodial multichain wallet: native and token sends, DEX integrations and staking on Cardano, XRP, Sui, NEAR, THORChain, TON, TRON, Stellar, Ethereum and Robinhood Chain.</li>
+          <li>Built Menese's cross-chain bridge canisters for TRON, Cardano and XRP, deployed to IC mainnet and executing live transactions on their target networks.</li>
+          <li>Contributed developer tooling to <a href="https://github.com/Mercatura-Forum/Thebes-Protocol-">Thebes</a>, the company's post-quantum Layer-1: a project scaffolding command, localhost deployment support, upload reliability fixes, and a stable-Region vault store that lets large on-chain assets (16+ MB) survive canister upgrades.</li>
+          <li>Built Enigma, a one-click platform that deploys CloakCoin nodes on Phala Cloud's trusted execution environment, orchestrated end to end by an ICP canister.</li>
+          <li>Found and responsibly disclosed a critical authorization vulnerability in the Layer-1's substrate, with a live proof of concept and a written disclosure.</li>
+          <li>Co-taught Mercatura Forum's <a href="https://www.linkedin.com/posts/mercatura-forum_are-you-a-recent-graduate-or-a-senior-student-activity-7483177272036864000-Jyaj">4-week Full Stack Development Summer Course</a> (Aug 2026), on Rust and Motoko, and gave a live session at Cairo ICT 2026, “Make Any Camera Intelligent”.</li>
+        </ul>
+        <p class="also">Before that: part-time teaching assistant at Misr University for Science and Technology (programming and microcontroller labs). BS in Computer Engineering, MUST, 2025.</p>
+      </article>
+    </section>
+
+    <section id="projects" class="wrap reveal">
+      <h2><span class="num">02</span>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <a class="media" href="https://www.meneseprotocol.io/"><img loading="lazy" src="/assets/work/menese.jpg" alt="Menese Protocol website: The Multichain Operating System" width="960" height="600"></a>
+          <div class="body">
+            <h3>Menese Protocol</h3>
+            <p>The multichain wallet I work on at Mercatura: non-custodial vaults with sends, swaps and staking across chains, signed by Internet Computer canisters.</p>
+            <ul class="tags"><li>Motoko</li><li>ICP</li><li>React</li><li>TypeScript</li></ul>
+            <div class="links"><a href="https://www.meneseprotocol.io/">Website</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media type"><div><span>Metallic Hell</span><small>on-chain co-op shooter</small></div></div>
+          <div class="body">
+            <h3>Metallic Hell</h3>
+            <p>First-person horror wave shooter with 4-player online co-op, hosted fully on-chain on the Thebes Layer-1. I built the file splitting and in-browser reassembly that lets a 113 MB WebGL build load from a blockchain.</p>
+            <ul class="tags"><li>Unity</li><li>Netcode</li><li>WebGL</li><li>Thebes</li></ul>
+            <div class="links"><a href="https://memphis.mercaturaforum.com/_/raw/9635586163366/index.html">Play</a><a href="https://github.com/AAK581/metallic-hell-thebes-game">Source</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <a class="media" href="https://testnet-cats-dapp.vercel.app/"><img loading="lazy" src="/assets/work/testnet-cats.jpg" alt="Testnet Cats dApp: connect wallet screen" width="960" height="600"></a>
+          <div class="body">
+            <h3>Testnet Cats</h3>
+            <p>A gamified faucet that hands out testnet tokens on 5 networks: Sepolia, Scroll Sepolia, Monad Testnet, Moonbase Alpha and Flow Testnet.</p>
+            <ul class="tags"><li>React</li><li>Wagmi</li><li>Reown</li><li>Foundry</li></ul>
+            <div class="links"><a href="https://testnet-cats-dapp.vercel.app/">Live</a><a href="https://github.com/AAK581/testnet-cats-dapp">Source</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media type"><div><span>IC Carnage</span><small>Unity on ICP mainnet</small></div></div>
+          <div class="body">
+            <h3>IC Carnage</h3>
+            <p>Unity WebGL game live on ICP mainnet with a custom ICRC-1 token, an NFT collection canister and Internet Identity login.</p>
+            <ul class="tags"><li>Unity</li><li>Motoko</li><li>ICRC-1</li><li>Internet Identity</li></ul>
+            <div class="links"><a href="https://gbbo5-mqaaa-aaaai-atlva-cai.icp0.io/">Play</a><a href="https://github.com/AAK581/ic-carnage">Source</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media type"><div><span>MZ/MV APK Builder</span><small>RPG Maker to Android</small></div></div>
+          <div class="body">
+            <h3>MZ/MV APK Builder</h3>
+            <p>Windows tool, GUI and CLI, that turns RPG Maker MV and MZ games into signed Android APKs and sets up the whole Android toolchain by itself.</p>
+            <ul class="tags"><li>PowerShell</li><li>Android</li><li>Tooling</li></ul>
+            <div class="links"><a href="https://github.com/AAK581/MZ-MV-APK-Builder">Source</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media type"><div><span>Nexus Lock</span><small>graduation project</small></div></div>
+          <div class="body">
+            <h3>Nexus Lock</h3>
+            <p>A smart door lock with multi-factor authentication: face, fingerprint, keypad and phone. I built its local React.js dashboard.</p>
+            <ul class="tags"><li>React</li><li>Dashboard</li></ul>
+            <div class="links"><a href="https://www.linkedin.com/posts/adham-ahmed-3849b324b_graduation-engineering-activity-7339976269154910209-tLpH">Project post</a></div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="games">
-      <h3>More Games</h3>
-      <div class="grid">
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/who-killed-marie-blackwood"><img loading="lazy" src="assets/covers/who-killed-marie-blackwood.png" alt="Who Killed Marie Blackwood cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/who-killed-marie-blackwood">Who Killed Marie Blackwood</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/the-puppeteer-lamentation"><img loading="lazy" src="assets/covers/the-puppeteer-lamentation.png" alt="The Puppeteer: Lamentation cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/the-puppeteer-lamentation">The Puppeteer: Lamentation</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/engineering-marvels-from-hell"><img loading="lazy" src="assets/covers/engineering-marvels-from-hell.png" data-gif="assets/covers/engineering-marvels-from-hell.gif" alt="Engineering Marvels From Hell cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/engineering-marvels-from-hell">Engineering Marvels From Hell</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/the-reids"><img loading="lazy" src="assets/covers/the-reids.png" alt="The Reids cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/the-reids">The Reids</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/from-voorhees-with-love"><img loading="lazy" src="assets/covers/from-voorhees-with-love.png" alt="From Voorhees, with Love cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/from-voorhees-with-love">From Voorhees, with Love</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/retrieval"><img loading="lazy" src="assets/covers/retrieval.png" alt="Retrieval cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/retrieval">Retrieval</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/the-purge-desperation"><img loading="lazy" src="assets/covers/the-purge-desperation.png" alt="The Purge: Desperation cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/the-purge-desperation">The Purge: Desperation</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/monsters"><img loading="lazy" src="assets/covers/monsters.png" alt="Monsters cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/monsters">Monsters (Jam version, Pre-alpha)</a>
+    <section id="games" class="wrap reveal">
+      <h2><span class="num">03</span>Games</h2>
+      <div class="game">
+        <a href="https://play.google.com/store/apps/details?id=com.doma581.amimicryoflife"><img loading="lazy" src="/assets/covers/a-mimicry-of-life.png" data-gif="/assets/covers/a-mimicry-of-life.gif" alt="A Mimicry of Life cover art" width="315" height="250"></a>
+        <div>
+          <span class="label">Out now on Android</span>
+          <h3>A Mimicry of Life</h3>
+          <p>A narrative horror RPG, shipped to Google Play and itch.io. More of my games, mostly horror and made in RPG Maker, are on itch.io.</p>
+          <div class="row">
+            <a class="play" href="https://play.google.com/store/apps/details?id=com.doma581.amimicryoflife"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
+            <a class="btn" href="/games/">All my games</a>
+            <a class="btn" href="https://aak581.itch.io/">itch.io</a>
+          </div>
         </div>
       </div>
-      <p class="all-games"><a class="btn-itch" href="https://aak581.itch.io/">All games on itch.io</a></p>
     </section>
-  </div>
+
+    <section class="wrap reveal">
+      <div class="two">
+        <div class="panel">
+          <h3>Skills</h3>
+          <dl class="skills">
+            <dt>Languages</dt><dd>Motoko, Rust, TypeScript, JavaScript, Solidity, C#, C++, C</dd>
+            <dt>Web</dt><dd>React, Next.js, Tailwind CSS, HTML, CSS</dd>
+            <dt>Web3</dt><dd>Internet Computer canisters, EVM chains, smart contracts, multichain wallets and bridges, Foundry</dd>
+            <dt>Games</dt><dd>Unity, RPG Maker MZ, Blender, Aseprite</dd>
+            <dt>Tools</dt><dd>Git, Docker, Linux, Google Cloud</dd>
+          </dl>
+        </div>
+        <div class="panel">
+          <h3>Languages and learning</h3>
+          <ul>
+            <li>Arabic (native), English (fluent), Turkish and French (basic)</li>
+            <li>Chainlink Fundamentals (Cyfrin), Arabic Blockchain Developer Bootcamp (Blokkat), Blockchain Theory 101</li>
+            <li>Rust Crash Course, Cloud with GCP (Telecom Egypt and Digital Hub), Cybersecurity SOC track (AMIT)</li>
+            <li>HackerRank five-star gold badge in C++</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact wrap reveal">
+      <h2>Get in touch</h2>
+      <p>The fastest way to reach me is email.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:adhamahmad@outlook.com">adhamahmad@outlook.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/adham-ahmed-3849b324b">LinkedIn</a>
+        <a class="btn" href="https://github.com/AAK581">GitHub</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <a href="/privacy/a-mimicry-of-life/">Privacy Policy — A Mimicry of Life</a>
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Adham Ahmed Kamel</span>
+      <span><a href="/games/">Games</a> · <a href="/privacy/a-mimicry-of-life/">Privacy policy for A Mimicry of Life</a></span>
+    </div>
   </footer>
 
   <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var items = document.querySelectorAll('.reveal');
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('in'); });
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { rootMargin: '0px 0px -8% 0px' });
+      items.forEach(function (el) { io.observe(el); });
+    }
     document.querySelectorAll('img[data-gif]').forEach(function (img) {
-      var still = img.src;
-      var cell = img.closest('.cell');
-      cell.addEventListener('mouseenter', function () { img.src = img.dataset.gif; });
-      cell.addEventListener('mouseleave', function () { img.src = still; });
+      var still = img.src, box = img.closest('.game');
+      box.addEventListener('mouseenter', function () { img.src = img.dataset.gif; });
+      box.addEventListener('mouseleave', function () { img.src = still; });
     });
   </script>
 </body>
