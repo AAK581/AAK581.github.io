@@ -3,208 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Doma — Game Developer</title>
-  <meta name="description" content="Doma — just a humble Egyptian computer engineer with a passion for the horrific... And coffee. A Mimicry of Life, out now on Android, plus more games on itch.io.">
+  <title>Games · Adham Ahmed Kamel</title>
+  <meta name="description" content="Games by Adham Ahmed Kamel (Doma): A Mimicry of Life, out now on Android, plus more horror games on itch.io.">
+  <link rel="canonical" href="https://aak581.github.io/games/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aak581.github.io/games/">
+  <meta property="og:title" content="Games · Adham Ahmed Kamel">
+  <meta property="og:description" content="A Mimicry of Life, out now on Android, plus more horror games on itch.io.">
+  <meta property="og:image" content="https://aak581.github.io/assets/covers/a-mimicry-of-life.png">
   <link rel="icon" href="/favicon.ico" sizes="48x48 32x32 16x16">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
-  <meta name="theme-color" content="#000000">
-  <style>
-    :root {
-      --bg: #000000;
-      --panel: #0c0c0c;
-      --border: #262626;
-      --text: #cbcac8;
-      --text-dim: rgba(203, 202, 200, 0.75);
-      --accent: #b11d1d;
-    }
-    * { box-sizing: border-box; }
-    body {
-      font-family: serif, Lato, sans-serif;
-      font-size: 120%;
-      background: var(--bg);
-      background-image: url("/assets/stare-bg.png");
-      background-position: right bottom;
-      background-repeat: no-repeat;
-      background-size: 55%;
-      color: var(--text);
-      margin: 0;
-      min-height: 100vh;
-    }
-    @media screen and (min-width: 800px) {
-      body { background-attachment: fixed; }
-    }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .wrap {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 2.5rem 1.25rem 1rem;
-    }
-    header { text-align: center; margin-bottom: 2.5rem; }
-    h1 { font-size: 2.4rem; margin: 0; color: var(--text); }
-    .tagline { color: var(--text-dim); margin: 0.4rem 0 0; }
-
-    .featured {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      padding: 1.5rem;
-      margin-bottom: 3rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      align-items: center;
-      justify-content: center;
-    }
-    .featured .cover {
-      flex: 1 1 320px;
-      max-width: 460px;
-    }
-    .featured .cover img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border: 1px solid var(--border);
-    }
-    .featured .info {
-      flex: 1 1 280px;
-      max-width: 420px;
-      text-align: center;
-    }
-    .featured .label {
-      font-size: 0.75rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-    .featured h2 { margin: 0.4rem 0 0.6rem; font-size: 1.7rem; }
-    .featured h2 a { color: var(--text); }
-    .featured p { color: var(--text-dim); line-height: 1.6; margin-top: 0; }
-    .badge-play img { height: 72px; display: inline-block; }
-    .badge-itch img { height: 50px; display: inline-block; margin-top: 0.35rem; }
-    .btn-itch {
-      display: inline-block;
-      border: 1px solid var(--accent);
-      padding: 0.5rem 1.2rem;
-      margin-top: 0.5rem;
-    }
-    .btn-itch:hover { background: var(--accent); color: #fff; text-decoration: none; }
-
-    .games h3 {
-      font-size: 1.1rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-dim);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.5rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
-    .cell a.thumb { display: block; border: 1px solid var(--border); }
-    .cell img {
-      width: 100%;
-      aspect-ratio: 315 / 250;
-      object-fit: cover;
-      display: block;
-      background: var(--panel);
-    }
-    .cell .title {
-      display: block;
-      margin-top: 0.5rem;
-      font-size: 1.25rem;
-      color: var(--accent);
-    }
-    .all-games { text-align: center; margin-bottom: 1rem; }
-
-    footer {
-      text-align: center;
-      border-top: 1px solid var(--border);
-      padding: 1.25rem;
-      font-size: 0.8rem;
-      color: var(--text-dim);
-    }
-  </style>
+  <meta name="theme-color" content="#0b0d12">
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Doma</h1>
-      <p class="tagline">Just a humble Egyptian computer engineer with a passion for the horrific... And coffee.</p>
-      <p class="tagline"><a href="https://linktr.ee/aak581">linktr.ee/aak581</a></p>
-      <p class="tagline"><a href="/">Developer portfolio</a></p>
+  <a class="skip" href="#main">Skip to content</a>
+  <nav aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="/">Adham Ahmed Kamel</a>
+      <ul>
+        <li><a href="/#work">Work</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li class="opt"><a href="/games/" aria-current="page">Games</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header class="hero wrap" id="top">
+      <div class="hero-top">
+        <img class="avatar" src="/assets/icons/icon-192.png" alt="" width="76" height="76">
+        <div>
+          <h1>Games</h1>
+          <p class="role">Made as Doma · Giza, Egypt</p>
+        </div>
+      </div>
+      <p class="lead">Just a humble Egyptian computer engineer with a passion for the horrific... And coffee. My games are mostly horror, mostly made in RPG Maker, and A Mimicry of Life is out now on Google Play.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://aak581.itch.io/">All games on itch.io</a>
+        <a class="btn" href="/">Developer portfolio</a>
+        <a class="btn" href="https://linktr.ee/aak581">More links</a>
+      </div>
     </header>
 
-    <section class="featured">
-      <div class="cover">
-        <a href="https://play.google.com/store/apps/details?id=com.doma581.amimicryoflife"><img src="/assets/covers/a-mimicry-of-life.gif" alt="A Mimicry of Life cover" width="816" height="624"></a>
-      </div>
-      <div class="info">
-        <span class="label">Out now on Android</span>
-        <h2><a href="https://aak581.itch.io/a-mimicry-of-life">A Mimicry of Life</a></h2>
-        <p>A narrative RPG.</p>
-        <a class="badge-play" href="https://play.google.com/store/apps/details?id=com.doma581.amimicryoflife"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
-        <br>
-        <a class="badge-itch" href="https://aak581.itch.io/a-mimicry-of-life"><img src="/assets/itch-badge.svg" alt="Available on itch.io"></a>
+    <section class="wrap reveal">
+      <h2><span class="num">01</span>Out now</h2>
+      <div class="game" data-hover>
+        <a href="https://play.google.com/store/apps/details?id=com.doma581.amimicryoflife"><img src="/assets/covers/a-mimicry-of-life.png" data-gif="/assets/covers/a-mimicry-of-life.gif" alt="A Mimicry of Life cover art" width="315" height="250"></a>
+        <div>
+          <span class="label">Out now on Android</span>
+          <h3>A Mimicry of Life</h3>
+          <p>A narrative horror RPG.</p>
+          <div class="row">
+            <a class="play" href="https://play.google.com/store/apps/details?id=com.doma581.amimicryoflife"><img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play"></a>
+            <a class="badge-itch" href="https://aak581.itch.io/a-mimicry-of-life"><img src="/assets/itch-badge.svg" alt="Available on itch.io" width="140" height="44"></a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="games">
-      <h3>More Games</h3>
-      <div class="grid">
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/who-killed-marie-blackwood"><img loading="lazy" src="/assets/covers/who-killed-marie-blackwood.png" alt="Who Killed Marie Blackwood cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/who-killed-marie-blackwood">Who Killed Marie Blackwood</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/the-puppeteer-lamentation"><img loading="lazy" src="/assets/covers/the-puppeteer-lamentation.png" alt="The Puppeteer: Lamentation cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/the-puppeteer-lamentation">The Puppeteer: Lamentation</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/engineering-marvels-from-hell"><img loading="lazy" src="/assets/covers/engineering-marvels-from-hell.png" data-gif="/assets/covers/engineering-marvels-from-hell.gif" alt="Engineering Marvels From Hell cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/engineering-marvels-from-hell">Engineering Marvels From Hell</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/the-reids"><img loading="lazy" src="/assets/covers/the-reids.png" alt="The Reids cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/the-reids">The Reids</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/from-voorhees-with-love"><img loading="lazy" src="/assets/covers/from-voorhees-with-love.png" alt="From Voorhees, with Love cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/from-voorhees-with-love">From Voorhees, with Love</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/retrieval"><img loading="lazy" src="/assets/covers/retrieval.png" alt="Retrieval cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/retrieval">Retrieval</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/the-purge-desperation"><img loading="lazy" src="/assets/covers/the-purge-desperation.png" alt="The Purge: Desperation cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/the-purge-desperation">The Purge: Desperation</a>
-        </div>
-        <div class="cell">
-          <a class="thumb" href="https://aak581.itch.io/monsters"><img loading="lazy" src="/assets/covers/monsters.png" alt="Monsters cover" width="315" height="250"></a>
-          <a class="title" href="https://aak581.itch.io/monsters">Monsters (Jam version, Pre-alpha)</a>
-        </div>
+    <section class="wrap reveal">
+      <h2><span class="num">02</span>More games</h2>
+      <div class="grid games-grid">
+        <article class="card">
+          <a class="media cover" href="https://aak581.itch.io/who-killed-marie-blackwood"><img loading="lazy" src="/assets/covers/who-killed-marie-blackwood.png" alt="Who Killed Marie Blackwood cover" width="315" height="250"></a>
+          <div class="body"><h3><a href="https://aak581.itch.io/who-killed-marie-blackwood">Who Killed Marie Blackwood</a></h3></div>
+        </article>
+        <article class="card">
+          <a class="media cover" href="https://aak581.itch.io/the-puppeteer-lamentation"><img loading="lazy" src="/assets/covers/the-puppeteer-lamentation.png" alt="The Puppeteer: Lamentation cover" width="315" height="250"></a>
+          <div class="body"><h3><a href="https://aak581.itch.io/the-puppeteer-lamentation">The Puppeteer: Lamentation</a></h3></div>
+        </article>
+        <article class="card" data-hover>
+          <a class="media cover" href="https://aak581.itch.io/engineering-marvels-from-hell"><img loading="lazy" src="/assets/covers/engineering-marvels-from-hell.png" data-gif="/assets/covers/engineering-marvels-from-hell.gif" alt="Engineering Marvels From Hell cover" width="315" height="250"></a>
+          <div class="body"><h3><a href="https://aak581.itch.io/engineering-marvels-from-hell">Engineering Marvels From Hell</a></h3></div>
+        </article>
+        <article class="card">
+          <a class="media cover" href="https://aak581.itch.io/the-reids"><img loading="lazy" src="/assets/covers/the-reids.png" alt="The Reids cover" width="315" height="250"></a>
+          <div class="body"><h3><a href="https://aak581.itch.io/the-reids">The Reids</a></h3></div>
+        </article>
+        <article class="card">
+          <a class="media cover" href="https://aak581.itch.io/from-voorhees-with-love"><img loading="lazy" src="/assets/covers/from-voorhees-with-love.png" alt="From Voorhees, with Love cover" width="315" height="250"></a>
+          <div class="body"><h3><a href="https://aak581.itch.io/from-voorhees-with-love">From Voorhees, with Love</a></h3></div>
+        </article>
+        <article class="card">
+          <a class="media cover" href="https://aak581.itch.io/retrieval"><img loading="lazy" src="/assets/covers/retrieval.png" alt="Retrieval cover" width="315" height="250"></a>
+          <div class="body"><h3><a href="https://aak581.itch.io/retrieval">Retrieval</a></h3></div>
+        </article>
+        <article class="card">
+          <a class="media cover" href="https://aak581.itch.io/the-purge-desperation"><img loading="lazy" src="/assets/covers/the-purge-desperation.png" alt="The Purge: Desperation cover" width="315" height="250"></a>
+          <div class="body"><h3><a href="https://aak581.itch.io/the-purge-desperation">The Purge: Desperation</a></h3></div>
+        </article>
+        <article class="card">
+          <a class="media cover" href="https://aak581.itch.io/monsters"><img loading="lazy" src="/assets/covers/monsters.png" alt="Monsters cover" width="315" height="250"></a>
+          <div class="body"><h3><a href="https://aak581.itch.io/monsters">Monsters (Jam version, Pre-alpha)</a></h3></div>
+        </article>
       </div>
-      <p class="all-games"><a class="btn-itch" href="https://aak581.itch.io/">All games on itch.io</a></p>
+      <p style="text-align:center; margin-top:1.6rem;"><a class="btn" href="https://aak581.itch.io/">All games on itch.io</a></p>
     </section>
-  </div>
+  </main>
 
   <footer>
-    <a href="/privacy/a-mimicry-of-life/">Privacy Policy — A Mimicry of Life</a>
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Adham Ahmed Kamel</span>
+      <span><a href="/">Portfolio</a> · <a href="/privacy/a-mimicry-of-life/">Privacy policy for A Mimicry of Life</a></span>
+    </div>
   </footer>
 
-  <script>
-    document.querySelectorAll('img[data-gif]').forEach(function (img) {
-      var still = img.src;
-      var cell = img.closest('.cell');
-      cell.addEventListener('mouseenter', function () { img.src = img.dataset.gif; });
-      cell.addEventListener('mouseleave', function () { img.src = still; });
-    });
-  </script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>
