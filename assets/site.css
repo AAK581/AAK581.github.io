@@ -139,6 +139,7 @@ h2 .num { font-family: var(--mono); color: var(--accent-2); font-size: 0.95rem; 
 .game p { color: var(--muted); margin: 0 0 1rem; }
 .game .play img { height: 56px; width: auto; border: 0; aspect-ratio: auto; }
 .game .row { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; }
+.game + .game { margin-top: 2.2rem; }
 @media (max-width: 680px) { .game { grid-template-columns: 1fr; } }
 
 /* lists */
